@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+  	<ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'socioNormal'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'socioNormal'}">  
+			<ui:include src="/WEB-INF/facelets/menu/socio.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'socioNormal'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>	  
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'socioNormal'}">
+			<h3>Guía de bares</h3>
+			<h:dataTable cellpadding="3" value="#{barBean.all}" var="b" >
+			<h:column>
+				<f:facet name="header">
+               		<h:outputText  value="Nombre bar"/>
+               </f:facet>
+               <h:outputText value="#{b.nombre}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Descripcion"/>
+				</f:facet>
+				<h:outputText value="#{b.descripcion}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Direccion"/>
+				</f:facet>
+				<h:outputText value="#{b.direccion}" />
+			</h:column>		
+			</h:dataTable>			
+			</ui:fragment>
+	</ui:define>
+	
+</ui:composition>
+</html>

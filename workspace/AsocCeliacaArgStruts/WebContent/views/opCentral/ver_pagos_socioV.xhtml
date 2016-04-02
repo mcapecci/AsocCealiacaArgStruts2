@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+	<ui:define name="titulo">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<h:outputText value="Pago socio" />
+		</ui:fragment>
+	</ui:define>
+    
+	<ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<ui:include src="/WEB-INF/facelets/menu/opCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'opCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>		  
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">
+		<h3>Listado de Socios Virtuales</h3>
+		<h:form>
+			<h:dataTable cellpadding="3" value="#{opC_SocioVBean.all}" var="socio" >
+			<h:column>
+				<f:facet name="header">
+               		<h:outputText  value="Nombre y Apellido"/>
+               </f:facet>
+               <h:outputText value="#{socio.nomyap}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+               		<h:outputText  value="Dni"/>
+               </f:facet>
+               <h:outputText value="#{socio.dni}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+               		<h:outputText  value="Username"/>
+               </f:facet>
+               <h:outputText value="#{socio.username}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Ver pagos" />
+				</f:facet>
+				 <h:panelGroup style="cursor:pointer;" outcome="#">
+				 	<h:graphicImage library="tema1" name="images/more.png"/> 
+				 	<h:commandButton action="#{opC_SocioVBean.verPagos}" value="Ver Pagos" >
+  						<f:setPropertyActionListener value="#{socio}" target="#{opC_SocioVBean.selected}" />
+  	   				</h:commandButton>	
+				 </h:panelGroup><br/>						
+			</h:column>			
+			</h:dataTable>			
+		</h:form>
+		
+		</ui:fragment>
+	</ui:define>
+	</ui:composition>
+</html>

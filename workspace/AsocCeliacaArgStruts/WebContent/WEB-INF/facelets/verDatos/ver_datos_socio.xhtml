@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition>
+			<h3>Datos Personales </h3>
+			<fieldset align="center" style="padding-right: 0px; padding-left: 60px;">	
+				<br /><br />
+				<label><h:outputText  value="Nombre y Apellido"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.nomyap}"/></span>
+				<br/><br />
+				<label><h:outputText value="Email"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.email}" /></span>
+				<br/><br />
+				<label><h:outputText value="Telefono"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.telefono}" /></span>
+				<br/><br />
+				<label><h:outputText value="Direccion"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.direccion}" /></span>
+				<br/><br />
+				<label><h:outputText value="Username"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.username}" /></span>
+				<br/><br />
+				<label><h:outputText value="DNI"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.dni}" /></span>
+				<br/><br />
+				<label><h:outputText value="Fecha de nacimiento"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.fechaNacimiento}" /></span>
+				<br/><br />
+				<label><h:outputText value="Ocupación"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.ocupacion}" /></span>
+				<br/><br />
+				<label><h:outputText value="Fecha de diagnóstico"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.fechaDiagnostico}" /></span>
+				<br/><br />
+				<label><h:outputText value="Fecha de ingreso"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.fechaIngreso}" /></span>
+				<br/><br />
+				<label><h:outputText value="Presentado por"/></label>
+				<span style="width: 200px; margin: 10px 35px;"><h:outputText value="#{loginBean.user.presentadoPor}" /></span>
+				<br /><br />
+			 </fieldset>
+			 <h:button class="button" value="Actualizar Datos" outcome="config_cuenta" />
+</ui:composition>
+</html>

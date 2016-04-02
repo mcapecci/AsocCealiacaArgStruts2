@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+   	<ui:define name="titulo">
+   		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+		<h:outputText value="Editar Medicamento" />
+		</ui:fragment>
+	</ui:define>
+	
+   	 <ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/menu/adminCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'adminCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">
+			<h3>Edición Medicamento</h3>
+			<h:form>
+				<fieldset align="right">
+					<label><h:outputText value="Nombre" /></label>		
+					<h:inputText name="nombre" id="nombre" required="true" value="#{medicamentoBean.selected.nombre}">
+						<f:validateLength minimum="4" maximum="20"/>
+					</h:inputText> <h:outputText value="(*)" /><br/>
+					<h:message for="nombre" style="color: #E10302;"></h:message>
+					<br/><br/>				
+					
+					<label><h:outputText value="Descripción" /></label>		
+					<h:inputText name="descripcion" id="descripcion" required="true" value="#{medicamentoBean.selected.descripcion}" >
+						<f:validateLength minimum="4" maximum="40"/>
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="descripcion" style="color: #E10302;"></h:message>
+					<br/><br/>			
+					
+					<label><h:outputText value="Precio" /></label>		
+					<h:inputText name="precio" id="precio" required="true" value="#{medicamentoBean.selected.precio}">
+						<f:validateLength minimum="2" maximum="10"/>
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="precio" style="color: #E10302;"></h:message>
+					<br/><br/>			
+				
+				<h:commandButton class="button" value="Guardar cambios" action="#{medicamentoBean.modificar}"> </h:commandButton>
+		    	<h:button class="button" value="Cancelar" outcome="ver_medicamentos" /> <br /> <br />
+		    	<h:outputText value="(*) : Campo obligatorio" /> 
+		    </fieldset>
+			</h:form>
+			</ui:fragment>
+	</ui:define>
+	
+</ui:composition>
+</html>

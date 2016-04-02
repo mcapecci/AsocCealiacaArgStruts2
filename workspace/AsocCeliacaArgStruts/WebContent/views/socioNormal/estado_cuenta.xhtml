@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+
+   	<ui:define name="titulo">
+		<ui:fragment rendered="#{loginBean.profile == 'socioNormal'}">  
+			<h:outputText value="Historial pagos" />
+		</ui:fragment> 
+	</ui:define>
+    
+	<ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'socioNormal'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'socioNormal'}">  
+			<ui:include src="/WEB-INF/facelets/menu/socio.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'socioNormal'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>	
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'socioNormal'}">
+			<h3>Historial de pagos</h3>
+		   <h:form>
+			<h:dataTable cellpadding="3" value="#{pagoBean.all}" var="p" >
+			<h:column>
+				<f:facet name="header">
+               		<h:outputText  value="Fecha de Pago"/>
+               </f:facet>
+               <h:outputText value="#{p.fechaPago}"/>
+			</h:column>			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Importe"/>
+				</f:facet>
+				<h:outputText value="#{p.importe}" />
+			</h:column>		
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Periodo"/>
+				</f:facet>
+				<h:outputText value="#{p.periodo}" />
+			</h:column>		
+				
+			</h:dataTable>		
+			</h:form>
+			<div style="width:650px">
+			<a href="http://www.pagomiscuentas.com" target="_blank"><h:graphicImage library="tema1" name="images/pago-pmc.png"/></a>
+			<h:graphicImage library="tema1" name="images/pago-tarjeta.png"/>
+			<h:graphicImage library="tema1" name="images/pago-debito.png"/>
+			</div>
+		</ui:fragment>
+	</ui:define>
+	
+</ui:composition>
+</html>
+			

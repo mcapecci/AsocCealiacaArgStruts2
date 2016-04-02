@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition>
+		<nav id="menu">
+			<div class="itemMenu">Gestión de Socios de la Central</div>
+			<ul>				
+				<li><h:link value="Registrar Socio" outcome="registrar_central"/></li>
+				<li><h:link value="Listado de Socios" outcome="ver_central"/></li>
+				<li><h:link value="Listado de Pagos" outcome="ver_pagos_socioN"/></li>
+			</ul>
+			<br />
+			<div class="itemMenu">Gestión de Socios Virtuales</div>
+			<ul>				
+				<li><h:link value="Registrar Socio" outcome="registrar_virtual"/></li>
+				<li><h:link value="Listado de Socios" outcome="ver_virtual"/></li>
+				<li><h:link value="Listado de Pagos" outcome="ver_pagos_socioV"/></li>
+				<li><h:link value="Listado de Avisos de Pago" outcome="ver_avisospago" /></li>
+			</ul>
+			<br />
+			<div class="itemMenu">Consulta de Socios de Unidades</div>
+			<ul>				
+				<li><h:link value="Listado de socios" outcome="ver_unidad"/></li>
+			</ul>
+			<br />
+			<div class="itemMenu">Configuración de la cuenta</div>
+			<ul>	
+				<li><h:link value="Ver sus datos personales" outcome="ver_datos"/></li>
+				<li><h:link value="Actualizar datos de contacto" outcome="config_cuenta"/></li>
+				<li><h:link value="Cambiar constraseña" outcome="cambiar_pass"/></li>
+			</ul> 
+		</nav>
+</ui:composition>
+</html>

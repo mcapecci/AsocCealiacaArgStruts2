@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+   	<ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/menu/adminCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'adminCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">
+			<h3>Ficha completa del producto</h3>
+			
+			<h:form>
+			<fieldset align="center">
+		
+			<label><h:outputText value="Producto" /></label> 	
+			<h:outputText value="#{productoBean.selected.nombre}" />
+			<br/><br/>
+			
+			<label><h:outputText value="Descripcion" /></label>		
+			<h:outputText value="#{productoBean.selected.descripcion}" />
+			<br/><br/>			
+			
+			<label><h:outputText value="R.N.P.A" /></label> 	
+			<h:outputText value="#{productoBean.selected.rnpa}" />
+			<br/><br/>			
+			
+			<label><h:outputText value="Empresa" /></label> 		
+			<h:outputText value="#{productoBean.selected.empresa}" />
+			<br/><br/>
+			
+			<label><h:outputText value="R.N.E" /></label> 	
+			<h:outputText value="#{productoBean.selected.rne}" />
+			<br/><br/>
+			
+			<label><h:outputText value="Fecha" /></label>		
+			<h:outputText value="#{productoBean.selected.fecha}" />
+			<br/><br/>			
+			
+			<label><h:outputText value="Fecha certificado LDG" /></label> 	
+			<h:outputText value="#{productoBean.selected.fechaCertLdg}" />
+			<br/><br/>			
+			
+			<label><h:outputText value="Comentario" /></label> 		
+			<h:outputText value="#{productoBean.selected.comentario}" />
+			<br/><br/>
+						
+		    <h:button class="button" value="Volver.." outcome="ver_productos" /> <br/> <br/> 
+		</fieldset>
+		</h:form>
+		</ui:fragment>
+	</ui:define>
+</ui:composition>
+</html>

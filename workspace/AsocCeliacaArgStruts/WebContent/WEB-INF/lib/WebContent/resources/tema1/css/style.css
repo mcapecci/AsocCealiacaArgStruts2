@@ -1,0 +1,348 @@
+@font-face {
+	font-family: biko;
+    src: url("/AsocCeliacaArg/javax.faces.resource/fonts/Biko_Regular.otf.xhtml?ln=tema1");
+}
+
+body{
+	font-family: biko;
+	background-color:#ffffff;
+	background-image:url("/AsocCeliacaArg/javax.faces.resource/images/bg.png.xhtml?ln=tema1");	
+	background-repeat:repeat-x;
+	background-position:left top;
+	background-attachment: fixed;
+}
+
+#page{
+	margin: 0 150px;
+	min-width: 1050px;
+	max-width: 1100px;
+}
+
+a:hover{
+	color: #E10302;
+}
+
+/**HEADER**/
+
+#header{
+	height: 166px;
+}
+
+#header img{
+	float: left;
+	border:0;
+}
+
+h1{
+	color: #1875B2;
+	text-shadow: 3px 3px 2px #999;
+	font-size: 53px;
+	font-weight: normal;
+	margin-top: 55px;
+	margin-left: 20px;
+	float: left;
+}
+
+/**CONTENT**/
+
+#content{
+	min-height: 356px;
+	/*	margin-bottom: 20px;*/
+}
+
+/**PROFILE**/
+#profile{
+	border-radius: 12px;
+	box-shadow: 5px 5px 5px 5px #999;
+	padding: 10px;
+	background: #D3D3D3;
+	float: right;
+	color: #000;
+	text-align: center;
+	min-width: 150px;
+	max-width: 190px;
+}
+
+#profile p{
+	margin: 0;
+}
+
+#profile a{
+	color: #1875b2;
+}
+
+#profile a:hover{
+	color: #E10302;
+}
+
+/**LEFT-BOX**/
+
+#left-box{
+	width: 219px;
+	float: left;	
+	margin-top: 50px;
+}
+
+/**login**/
+#login{
+	box-shadow: 5px 5px 5px 5px #999;	
+	padding: 15px;
+}
+
+#login label{
+	font-weight: bold;
+	font-size: 17px;
+	color: #1875b2;
+	margin: 10px;
+}
+
+#login input{
+	width: 155px;
+}
+
+#login  p{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 7.5px 5px;   
+   -webkit-border-radius: 13px;
+   -moz-border-radius: 13px;
+   border-radius: 13px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   text-decoration: none;
+   vertical-align: middle;
+   	font-family: precursive;
+
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+/**menu**/
+
+.itemMenu{
+	box-shadow: 5px 5px 5px 5px #999;
+	background: #D3D3D3;
+	padding: 10px;
+	border-radius: 10px 0px;
+	font-size: 18px;
+}
+
+#menu ul{
+	list-style-image: url('/AsocCeliacaArg/javax.faces.resource/images/lista.png.xhtml?ln=tema1');
+}
+
+#menu a{
+	text-decoration: none;
+	color: #000;
+}
+
+#menu a:hover{
+	color: #E10302;
+	list-style-image: url('/AsocCeliacaArg/javax.faces.resource/images/lista-red.png.xhtml?ln=tema1');
+}
+
+#menu ul:hover{
+	list-style-image: url('/AsocCeliacaArg/javax.faces.resource/images/lista-red.png.xhtml?ln=tema1');
+}
+
+#menu #actual a{
+	color: #E10302;
+	list-style-image: url('/AsocCeliacaArg/javax.faces.resource/images/lista-red.png.xhtml?ln=tema1');
+}
+
+/**MAIN**/
+
+#main{
+	margin: 25px 20px 0 20px;
+	float: right;
+	width: 550px;
+}   
+   
+#main h3{
+	color: #1875b2;
+	font-weight: normal;
+	font-size: 25px;
+}
+
+#texto{	
+	margin-left: 25px;
+}
+
+#texto p{
+	font-size: 14px;
+	font-weight: normal;
+	color: #000;
+	text-align: justify;
+}
+
+/**MAIN para BACKEND **/
+
+
+#main fieldset{
+	border-radius: 30px;
+	padding-right: 60px;
+	background: url('/AsocCeliacaArg/javax.faces.resource/images/icono2.png.xhtml?ln=tema1') no-repeat center;
+	min-height: 300px;
+}
+
+#main fieldset label{
+	font-size: 17px;
+	color: #1875b2;
+	margin: 15px;	
+}
+
+#main fieldset input, select{
+	width: 200px;
+	margin: 10px 35px;
+}
+
+#main .button{
+	width: 150px;
+	text-align: center;
+}
+
+#main .readonly{
+	background: none;
+}
+
+#main table{
+	width: 700px;
+	margin: 30px 10px;
+	color: #7F7F7F;
+	border-collapse: collapse;
+}
+
+table img{
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+
+table,caption {
+	border-right: 1px solid #CCC;
+	border-left: 1px solid #CCC
+}
+
+caption,th,td {
+	border-left: 0;
+	padding: 10px
+}
+
+thead th,tfoot th,tfoot td {
+	background-color: #E63C1E;
+	color: #FFF;
+	font-weight: 700;
+}
+
+caption {
+	background-color: none;
+	color: #E63C1E;
+	font-weight: 700;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border: 1px solid #808080;
+}
+
+thead th {
+	color: #FFB3A6;
+	text-align: center;
+	min-width: 102px;
+}
+
+
+tbody th {
+	padding: 20px 10px;
+}
+
+tbody tr.odd {
+	background-color: #F7F7F7;
+	color: #666
+}
+
+tbody a {
+	padding: 1px 2px;
+	color: #333;
+	text-decoration: none;
+	border-bottom: 1px dotted #E63C1E;
+}
+
+tbody td span{
+	text-decoration: none;
+	border-bottom: 1px dotted #E63C1E;
+}
+}
+
+tbody a:active,tbody a:hover,tbody a:focus,tbody a:visited{
+	color: #666
+}
+
+tbody tr:hover {
+	background-color: #EEE;
+	color: #333
+}
+
+tbody tr:hover a {
+	background-color: #FFF
+}
+
+tbody td+td+td+td a{
+	color: #C30;
+	font-weight: 700;
+	border-bottom: 0
+}
+
+tbody td+td+td+td a:active,tbody td+td+td+td a:hover,tbody td+td+td+td a:focus,tbody td+td+td+td a:visited, tbody td span:hover {
+	color: #E63C1E
+}
+
+tbody input {
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-family: biko;
+	font-size: 17px;
+}
+
+/**FOOTER**/
+
+#footer {
+	clear: both;
+	margin-top: 20px;
+	padding-top: 10px;
+}
+
+#footer hr {
+	height: 2px;
+}
+
+#footer p{
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.negrita{
+	font-weight: bold;
+	color: #1875b2;
+}

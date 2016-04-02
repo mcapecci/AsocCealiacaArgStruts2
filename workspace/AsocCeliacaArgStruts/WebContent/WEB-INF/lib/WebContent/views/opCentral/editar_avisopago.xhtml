@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+	<ui:define name="titulo">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<h:outputText value="Editar Virtual" />
+		</ui:fragment>
+	</ui:define>
+    
+	<ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<ui:include src="/WEB-INF/facelets/menu/opCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'opCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>	  
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">
+		<h3>Edición de aviso de pago de un Socio Virtual</h3>
+			<h:form>
+				<fieldset align="right">
+					<label><h:outputText value="Fecha de pago" /></label>		
+					<h:inputText name="fechaPago" id="fechaPago" required="true" value="#{opC_SocioVBean.avisoSelected.fechaPago}" maxlength="10">
+					<f:convertDateTime type="date" patter="dd/mm/aaaa"/>
+					</h:inputText> <h:outputText value="(*)" /><br/>
+					<h:message for="fechaPago" style="color: #E10302;"></h:message>
+			
+					<br/><br/>		
+					
+					<label><h:outputText value="Fecha de aviso" /></label>		
+					<h:inputText name="fechaAviso" id="fechaAviso" required="true" value="#{opC_SocioVBean.avisoSelected.fechaAviso}" maxlength="10">
+					<f:convertDateTime type="date" patter="dd/mm/aaaa"/>
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="fechaAviso" style="color: #E10302;"></h:message>			
+					<br/><br/>			
+					
+					<label><h:outputText value="Importe" /></label>		
+					<h:inputText name="importe" id="importe" required="true" value="#{opC_SocioVBean.avisoSelected.importe}" >
+					<f:validateLength minimum="1" maximum="5"/>
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="importe" style="color: #E10302;"></h:message>
+					<br/><br/>		
+					
+					<label><h:outputText value="Periodo" /></label>		
+					<h:inputText name="periodo" id="periodo" required="true" value="#{opC_SocioVBean.avisoSelected.periodo}" maxlength="10">
+						<f:convertDateTime type="date" patter="dd/mm/aaaa"/>
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="periodo" style="color: #E10302;"></h:message>			
+					<br/><br/>		
+					
+				
+				<h:commandButton class="button" value="Guardar cambios" action="#{opC_SocioVBean.modificarAviso}"> </h:commandButton>
+		    	<h:button class="button" value="Cancelar" outcome="ver_avisospago" /> <br /> <br />
+		    	<h:outputText value="(*) : Campo obligatorio" /> 
+		    </fieldset>
+			</h:form>
+			</ui:fragment>
+	</ui:define>
+</ui:composition>
+</html>

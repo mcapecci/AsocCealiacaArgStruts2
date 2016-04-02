@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+	<ui:define name="titulo">
+		<ui:fragment rendered="#{loginBean.profile == 'adminUnidad'}">  
+			<h:outputText value="Configuracion Cuenta" />
+		</ui:fragment>
+	</ui:define>
+    
+	  <ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'adminUnidad'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'adminUnidad'}">  
+			<ui:include src="/WEB-INF/facelets/menu/adminUnidad.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'adminUnidad'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'adminUnidad'}">
+		<h3>Actualizar datos de contacto</h3>
+		<h:form>
+				<fieldset align="right">
+					<label><h:outputText value="Email" /></label>		
+					<h:inputText name="email" id="email" required="true" value="#{adminUnidadBean.user.email}" validator="mailValidator">
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="email" style="color: #E10302;"></h:message>
+					<br/><br/>			
+					
+					<label><h:outputText value="Telefono" /></label>		
+					<h:inputText name="telefono" id="telefono" required="true" value="#{adminUnidadBean.user.telefono}" >
+						<f:validateLength minimum="6" maximum="20"/>
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="telefono" style="color: #E10302;"></h:message>
+					<br/><br/>			
+					
+					<label><h:outputText value="Dirección" /></label>		
+					<h:inputText name="direccion" id="direccion" required="true" value="#{adminUnidadBean.user.direccion}">
+						<f:validateLength minimum="8" maximum="40"/>
+					</h:inputText><h:outputText value="(*)" /><br/>
+					<h:message for="direccion" style="color: #E10302;"></h:message>
+					<br/><br/>			
+					
+				
+				
+				<h:commandButton class="button" value="Guardar cambios" action="#{adminUnidadBean.modificar}"> </h:commandButton>
+		    	<h:button class="button" value="Cancelar" outcome="ver_datos" /> <br /> <br />
+		    	<h:outputText value="(*) : Campo obligatorio" /> 
+		    </fieldset>
+			</h:form>
+			</ui:fragment>
+	</ui:define>
+</ui:composition>
+</html>

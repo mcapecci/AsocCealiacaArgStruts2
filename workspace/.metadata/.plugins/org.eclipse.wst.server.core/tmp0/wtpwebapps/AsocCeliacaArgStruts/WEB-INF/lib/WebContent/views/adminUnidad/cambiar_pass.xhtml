@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+		
+    <ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'adminUnidad'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'adminUnidad'}">  
+			<ui:include src="/WEB-INF/facelets/menu/adminUnidad.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'adminUnidad'}">
+			<h3>Usted no tiene permisos para esta sección</h3>	  
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'adminUnidad'}">
+		<h3>Cambiar contraseña</h3>	
+		<h:form>
+		<fieldset>
+			<br /> <br /> <br />			
+	    	<label><h:outputText value="Nueva Contraseña" /></label> 	
+			<h:inputSecret binding="#{contra}" name="pass" id="pass" required="true" value="#{adminUnidadBean.pass}">
+				<f:validateLength minimum="4" maximum="20"/>
+			</h:inputSecret><h:outputText value="(*)" /><br/>
+			<h:message for="pass" style="color: #E10302;"></h:message>
+			<br/><br/>
+					
+			<label><h:outputText value="Repita la Contraseña" /></label>
+			<h:inputSecret name="newPass" id="newPass" required="true" value="#{adminUnidadBean.newPass}" validator="repeatPasswordValidator" >
+				<f:attribute name="password" value="#{contra.value}"/>
+			</h:inputSecret><h:outputText value="(*)" /><br/>
+			<h:message for="newPass" style="color: #E10302;"></h:message>
+			<br/><br/>		
+						
+			<h:commandButton class="button" value="Aceptar" action="#{adminUnidadBean.cambiarPass}"> </h:commandButton>
+		    <h:button class="button" value="Cancelar" outcome="index" /> <br/> <br/>
+		    <h:outputText value="(*) : Campo obligatorio" /> 
+		</fieldset>   
+		</h:form>
+		</ui:fragment>
+	</ui:define>
+</ui:composition>
+</html>

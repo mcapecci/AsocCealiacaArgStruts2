@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+    
+	<ui:define name="profile">
+		<h:outputText value="¡Bienvenido!" /> <br/>
+		<h:outputText value="Perfil: Visitante" />
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<fieldset id="login" align="center" >
+			<h:form>
+				<label><h:outputText value="Acceso a Usuarios" /></label> <br/><br/>
+				<h:outputText value="Usuario y/o Contraseña no válida." style="color: #E10302;"/><br/> <br />		
+				<h:inputText name="usuario" id="usuario" required="true" value="#{loginBean.username}" />
+				<br/>
+				<h:message for="usuario" style="color: #E10302;"></h:message>
+				<br/><br/>			
+				<h:inputSecret name="pass" id="pass" required="true" value="#{loginBean.password}" />
+				<br/>
+				<h:message for="pass" style="color: #E10302;"></h:message>
+				<br/> <br/>
+				<h:commandButton class="button" value="Entrar" action="#{loginBean.login}"> </h:commandButton> <br/><br/>
+				
+				<p>					
+					<a href="olvido_user.html">¿Olvidó su nombre de usuario?</a> <br/>
+					<a href="olvido_pass.html">¿Olvidó su contraseña?</a> <br/> 
+				</p>
+			</h:form>
+		</fieldset>	
+	</ui:define>
+	
+	<ui:define name="main">		
+		<ui:include src="/WEB-INF/facelets/text/intro.xhtml"></ui:include>
+	</ui:define>
+	
+</ui:composition>
+</html>

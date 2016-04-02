@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+     
+    <package name="principal" namespace="/" extends="struts-default">
+                 
+        <default-action-ref name="FormLogin" />
+         
+        <action name="FormLogin">
+            <result>/index.jsp</result>
+        </action>
+        <action name="Login" method="login" class="actions.LoginAction">
+             <result name="success">/views/${profile}/index.jsp</result>
+             <result name="error">/error.jsp</result>
+        </action>  
+        <action name="ver_datos" method="verDatos" class="actions.LoginAction">
+             <result name="ver_datos">/views/${profile}/ver_datos.jsp</result>
+        </action> 
+        <action name="editar_datos" method="editar" class="actions.LoginAction">
+             <result name="editar_datos">/views/${profile}/config_cuenta.jsp</result>
+        </action>   
+		<action name="index" method="index" class="actions.LoginAction">
+             <result name="index">/views/${profile}/index.jsp</result>
+        </action>     
+       
+       <!-- PRODUCTOS -->
+       <action name="ver_productos" class="actions.ProductoAction">
+        	 <result name="success">/views/${perfil}/ver_productos.jsp</result>
+       </action>
+       <action name="producto-editar" method="editar" class="actions.ProductoAction">
+        	 <result name="producto-editar">/views/${perfil}/editar_producto.jsp</result>
+       </action>
+       <action name="producto-verMas" method="verMas" class="actions.ProductoAction">
+        	 <result name="producto-verMas">/views/${perfil}/prod.jsp</result>
+       </action>
+       <action name="producto-modificado" method="modificar" class="actions.ProductoAction">
+        	 <result name="producto-modificado">/views/${perfil}/ver_productos.jsp</result>
+       </action>
+       <action name="producto-eliminar" method="eliminar" class="actions.ProductoAction">
+        	 <result name="producto-eliminado">/views/${perfil}/ver_productos.jsp</result>
+       </action>
+       <action name="producto-registrado" method="registrar" class="actions.ProductoAction">
+        	 <result name="producto-registrado">/views/${perfil}/ver_productos.jsp</result>
+       </action>
+        <action name="registrar_producto" class="actions.ProductoAction">
+        	 <result name="success">/views/${perfil}/registrar_producto.jsp</result>
+       </action>
+       
+       <!-- MEDICAMENTOS -->
+       <action name="ver_medicamentos" class="actions.MedicamentoAction">
+        	 <result name="success">/views/${perfil}/ver_medicamentos.jsp</result>
+       </action>
+       <action name="medicamento-editar" method="editar" class="actions.MedicamentoAction">
+        	 <result name="medicamento-editar">/views/${perfil}/editar_medicamento.jsp</result>
+       </action>
+       <action name="medicamento-modificado" method="modificar" class="actions.MedicamentoAction">
+        	 <result name="medicamento-modificado">/views/${perfil}/ver_medicamentos.jsp</result>
+       </action>
+       <action name="medicamento-eliminar" method="eliminar" class="actions.MedicamentoAction">
+        	 <result name="medicamento-eliminado">/views/${perfil}/ver_medicamentos.jsp</result>
+       </action>
+       <action name="medicamento-registrado" method="registrar" class="actions.MedicamentoAction">
+        	 <result name="medicamento-registrado">/views/${perfil}/ver_medicamentos.jsp</result>
+       </action>
+        <action name="registrar_medicamento" class="actions.MedicamentoAction">
+        	 <result name="success">/views/${perfil}/registrar_medicamento.jsp</result>
+       </action>
+       
+       <!-- BARES -->
+       <action name="ver_bares" class="actions.BarAction">
+        	 <result name="success">/views/${perfil}/ver_bares.jsp</result>
+       </action>
+       <action name="bar-editar" method="editar" class="actions.BarAction">
+        	 <result name="bar-editar">/views/${perfil}/editar_bar.jsp</result>
+       </action>
+       <action name="bar-modificado" method="modificar" class="actions.BarAction">
+        	 <result name="bar-modificado">/views/${perfil}/ver_bares.jsp</result>
+       </action>
+       <action name="bar-eliminar" method="eliminar" class="actions.BarAction">
+        	 <result name="bar-eliminado">/views/${perfil}/ver_bares.jsp</result>
+       </action>
+       <action name="bar-registrado" method="registrar" class="actions.BarAction">
+        	 <result name="medicamento-registrado">/views/${perfil}/ver_bares.jsp</result>
+       </action>
+        <action name="registrar_bar" class="actions.BarAction">
+        	 <result name="success">/views/${perfil}/registrar_bar.jsp</result>
+       </action>
+       
+       <!-- ADMINISTRADOR CENTRAL -->
+       <action name="admincentral-modificado" method="modificar" class="actions.AdminCentralAction">
+        	 <result name="admincentral-modificado">/views/${perfil}/ver_datos.jsp</result>
+       </action>
+       <action name="cambiar_pass" class="actions.AdminCentralAction">
+        	 <result name="success">/views/${perfil}/cambiar_pass.jsp</result>
+       </action>
+       <action name="admincentral-cambiopass" method="cambiarPass" class="actions.AdminCentralAction">
+        	 <result name="admincentral-cambiopass">/views/${perfil}/index.jsp</result>
+       </action>
+       
+       <!-- ADMINISTRADOR CENTRAL // GESTION OPERADORES  -->
+       <action name="ver_operadoresC" class="actions.AdminOpCentralAction">
+        	 <result name="success">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       <action name="registrar_opC" class="actions.AdminOpCentralAction">
+        	 <result name="success">/views/${perfil}/registrar_op.jsp</result>
+       </action><action name="opcentral-editar" method="editar" class="actions.AdminOpCentralAction">
+        	 <result name="opcentral-editar">/views/${perfil}/editar_op.jsp</result>
+       </action>
+       <action name="opcentral-modificado" method="modificar" class="actions.AdminOpCentralAction">
+        	 <result name="opcentral-modificado">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       <action name="opcentral-eliminado" method="eliminar" class="actions.AdminOpCentralAction">
+        	 <result name="opcentral-eliminado">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       <action name="opcentral-registrado" method="registrar" class="actions.AdminOpCentralAction">
+        	 <result name="opcentral-registrado">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       
+       <!-- SEDE -->
+       <action name="ver_filiales" class="actions.SedeAction">
+        	 <result name="success">/views/${perfil}/ver_filiales.jsp</result>
+       </action>
+       <action name="ver_delegaciones" class="actions.SedeAction">
+        	 <result name="success">/views/${perfil}/ver_delegaciones.jsp</result>
+       </action>
+       <action name="ver_g_referencias" class="actions.SedeAction">
+        	 <result name="success">/views/${perfil}/ver_g_referencias.jsp</result>
+       </action>
+       <action name="ver_i_beneficiarias" class="actions.SedeAction">
+        	 <result name="success">/views/${perfil}/ver_i_beneficiarias.jsp</result>
+       </action>
+       <action name="registrar_sede" class="actions.SedeAction">
+        	 <result name="success">/views/${perfil}/registrar_sede.jsp</result>
+       </action>
+       <action name="sede-editar" method="editar" class="actions.SedeAction">
+        	<result name="sede-editar">/views/${perfil}/editar_sede.jsp</result>
+       </action>
+       <action name="cancelar-sede-editar" method="cancelarEdicion" class="actions.SedeAction">
+        	<result name="Filial">/views/${perfil}/ver_filiales.jsp</result>
+        	<result name="Delegacion">/views/${perfil}/ver_delegaciones.jsp</result>
+        	<result name="Grupo de Referencia">/views/${perfil}/ver_g_referencias.jsp</result>
+        	<result name="Institucion Beneficiaria">/views/${perfil}/ver_i_beneficiarias.jsp</result>
+       </action>
+       <action name="sede-modificar" method="modificar" class="actions.SedeAction">
+        	<result name="Filial">/views/${perfil}/ver_filiales.jsp</result>
+        	<result name="Delegacion">/views/${perfil}/ver_delegaciones.jsp</result>
+        	<result name="Grupo de Referencia">/views/${perfil}/ver_g_referencias.jsp</result>
+        	<result name="Institucion Beneficiaria">/views/${perfil}/ver_i_beneficiarias.jsp</result>
+       </action>
+       <action name="sede-eliminar" method="eliminar" class="actions.SedeAction">
+        	<result name="Filial">/views/${perfil}/ver_filiales.jsp</result>
+        	<result name="Delegacion">/views/${perfil}/ver_delegaciones.jsp</result>
+        	<result name="Grupo de Referencia">/views/${perfil}/ver_g_referencias.jsp</result>
+        	<result name="Institucion Beneficiaria">/views/${perfil}/ver_i_beneficiarias.jsp</result>
+       </action>
+       <action name="sede-registrada" method="registrar" class="actions.SedeAction">
+        	<result name="Filial">/views/${perfil}/ver_filiales.jsp</result>
+        	<result name="Delegacion">/views/${perfil}/ver_delegaciones.jsp</result>
+        	<result name="Grupo de Referencia">/views/${perfil}/ver_g_referencias.jsp</result>
+        	<result name="Institucion Beneficiaria">/views/${perfil}/ver_i_beneficiarias.jsp</result>
+       </action>       
+       
+       <!-- ADMIN UNIDAD -->
+       <action name="adminunidad-modificado" method="modificar" class="actions.AdminUnidadAction">
+        	 <result name="adminunidad-modificado">/views/${perfil}/ver_datos.jsp</result>
+       </action>
+       <action name="cambiar_pass" class="actions.AdminUnidadAction">
+        	 <result name="success">/views/${perfil}/cambiar_pass.jsp</result>
+       </action>
+       <action name="adminunidad-cambiopass" method="cambiarPass" class="actions.AdminUnidadAction">
+        	 <result name="adminunidad-cambiopass">/views/${perfil}/index.jsp</result>
+       </action>
+       
+       <!-- ADMINISTRADOR UNIDAD //  GESTION OPERADORES -->
+       <action name="ver_operadoresU" class="actions.AdminOpUnidadAction">
+        	 <result name="success">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       <action name="registrar_opU" class="actions.AdminOpUnidadAction">
+        	 <result name="success">/views/${perfil}/registrar_op.jsp</result>
+       </action>
+       <action name="opunidad-editar" method="editar" class="actions.AdminOpUnidadAction">
+        	 <result name="opunidad-editar">/views/${perfil}/editar_op.jsp</result>
+       </action>
+       <action name="opunidad-modificado" method="modificar" class="actions.AdminOpUnidadAction">
+        	 <result name="opunidad-modificado">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       <action name="opunidad-eliminado" method="eliminar" class="actions.AdminOpUnidadAction">
+        	 <result name="opunidad-eliminado">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       <action name="opunidad-registrado" method="registrar" class="actions.AdminOpUnidadAction">
+        	 <result name="opunidad-registrado">/views/${perfil}/ver_operadores.jsp</result>
+       </action>
+       
+       <!-- OPERADOR UNIDAD -->
+       <action name="opnunidad-modificado" method="modificar" class="actions.OpUnidadAction">
+        	 <result name="opnunidad-modificado">/views/${perfil}/ver_datos.jsp</result>
+       </action>
+       <action name="cambiar_pass" class="actions.OpUnidadAction">
+        	 <result name="success">/views/${perfil}/cambiar_pass.jsp</result>
+       </action>
+       <action name="opunidad-cambiopass" method="cambiarPass" class="actions.OpUnidadAction">
+        	 <result name="opunidad-cambiopass">/views/${perfil}/index.jsp</result>
+       </action>
+       
+       <!-- OPERADOR UNIDAD // GESTION SOCIOS -->
+       
+       <!-- 
+       <action name="ver_sociosNormal" class="actions.OpU_SocioAction">
+        	 <result name="success">/views/${perfil}/ver_socio.jsp</result>
+       </action>
+       	README 
+	       ver si pagos_sociosNormal necesita el socio seleccionado
+	       y ver en que action va implementado
+        
+       <action name="pagos_sociosNormal" class="actions.OpU_SocioActionn">
+        	 <result name="success">/views/${perfil}/pagos_socio.jsp</result>
+       </action>
+        <action name="socioNormal-verPagos" class="actions.OpU_SocioAction">
+        	 <result name="success">/views/${perfil}/estado_cuenta.jsp</result>
+       </action>
+       <action name="registrar_pago" class="actions.OpU_SocioAction">
+        	 <result name="success">/views/${perfil}/registrar_pago.jsp</result>
+       </action>
+       <action name="pago-registrado" method="registrar" class="actions.OpU_SocioAction">
+        	 <result name="pago-registrado">/views/${perfil}/pagos_socio.jsp</result>
+       </action>
+       <action name="registrar_socioNormal" class="actions.OpU_SocioAction">
+        	 <result name="success">/views/${perfil}/registrar_socio.jsp</result>
+       </action>
+       <action name="socioNormal-editar" method="editar" class="actions.OpU_SocioAction">
+        	 <result name="socioNormal-editar">/views/${perfil}/editar_socio.jsp</result>
+       </action>
+       <action name="socioNormal-modificado" method="modificar" class="actions.OpU_SocioAction">
+        	 <result name="socioNormal-modificado">/views/${perfil}/ver_socio.jsp</result>
+       </action>
+       <action name="socioNormal-eliminado" method="eliminar" class="actions.OpU_SocioAction">
+        	 <result name="socioNormal-eliminado">/views/${perfil}/ver_socio.jsp</result>
+       </action>
+       <action name="socioNormal-registrado" method="registrar" class="actions.OpU_SocioAction">
+        	 <result name="socioNormal-registrado">/views/${perfil}/ver_socio.jsp</result>
+       </action>
+        -->
+    </package>
+</struts>

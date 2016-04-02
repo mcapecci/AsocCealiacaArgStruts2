@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" >
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+    <ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/menu/adminCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'adminCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">
+			<h3>Listado de Operadores de la Central</h3>
+		<h:form>
+			<h:dataTable cellpadding="3" value="#{adminOpCentralBean.all}" var="op" >
+			<h:column>
+				<f:facet name="header">
+               		<h:outputText  value="Nombre y Apellido"/>
+               </f:facet>
+               <h:outputText value="#{op.nomyap}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Email"/>
+				</f:facet>
+				<h:outputText value="#{op.email}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Telefono"/>
+				</f:facet>
+				<h:outputText value="#{op.telefono}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Direccion"/>
+				</f:facet>
+				<h:outputText value="#{op.direccion}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Username"/>
+				</f:facet>
+				<h:outputText value="#{op.username}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Acciones" />
+				</f:facet>
+				 <h:panelGroup style="cursor:pointer;" outcome="#">
+				 	<h:graphicImage library="tema1" name="images/edit.png"/> 
+				 	<h:commandButton action="#{adminOpCentralBean.editar}" value="Editar" >
+  						<f:setPropertyActionListener value="#{op}" target="#{adminOpCentralBean.selected}" />
+  	   				</h:commandButton>	
+				 </h:panelGroup><br/>
+		 		 <h:panelGroup style="cursor:pointer;" outcome="#">
+		 		 	<h:graphicImage library="tema1" name="images/delete.png"/>
+		 		 	<h:commandButton onclick="return confirm ('¿Seguro de eliminar este usuario?');" action="#{adminOpCentralBean.eliminar}" value="Eliminar" >
+  						<f:setPropertyActionListener value="#{op.id}" target="#{adminOpCentralBean.idSelectedUser}" />
+  	   				</h:commandButton>		 		 	
+		 		 </h:panelGroup><br/>						
+			</h:column>			
+			</h:dataTable>			
+		</h:form>
+	 		<h:button class="button" value="Agregar Operador" outcome="registrar_op" />
+	 		</ui:fragment>
+	</ui:define>
+	
+</ui:composition>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui= "http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="tema1" name="css/style.css" />	
+	<title>
+		<ui:insert name="titulo">
+			Asociación Celíaca Argentina
+		</ui:insert>
+	</title>	
+	<h:link rel="shortcut icon" library="tema1" href="images/icono.png"/>
+</h:head>
+
+<h:body>
+	<div id="page">
+		<div id="header">
+			<h:link outcome="index"><h:graphicImage library="tema1" name="images/logo.png"/></h:link>
+			<h1>Asociación Celíaca Argentina</h1>
+		</div>
+		
+		<div id="content">
+			<div id="profile">
+				<ui:insert name="profile">
+					Bienvenida + perfil + logout
+				</ui:insert>
+			</div>
+			
+			<div id="left-box">
+				<ui:insert name="left-box">
+					Login o Menu
+				</ui:insert>
+			</div>
+			<div id="main">
+				<ui:insert name="main">					
+					<h3>Bienvenidos a la Asociación Celíaca Argentina</h3>
+									
+				</ui:insert>
+			</div>
+		</div>
+		
+		<div id="footer">
+			<hr />
+			<p><span class="negrita">Sede Nacional:</span> Calle 24 #1907 e/71 y 72 La Plata (1900) Buenos Aires - Tel./Fax: 54-221-4516126 - info@celiaco.org.ar</p>
+		</div>		
+	</div>
+</h:body>
+</html>

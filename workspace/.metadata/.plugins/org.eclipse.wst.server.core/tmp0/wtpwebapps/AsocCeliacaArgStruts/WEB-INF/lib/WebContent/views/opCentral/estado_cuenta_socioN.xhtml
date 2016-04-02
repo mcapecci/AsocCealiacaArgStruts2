@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+
+   	<ui:define name="titulo">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<h:outputText value="Historial pagos" />
+		</ui:fragment> 
+	</ui:define>
+    
+	<ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">  
+			<ui:include src="/WEB-INF/facelets/menu/opCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'opCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>	
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'opCentral'}">
+			<h3><h:outputText value="Historial de pagos: #{opC_SocioCBean.selected.nomyap}" /> </h3>
+		   <h:form>
+			<h:dataTable cellpadding="3" value="#{opC_SocioCBean.getPagos()}" var="pago" >
+			<h:column>
+				<f:facet name="header">
+               		<h:outputText  value="Fecha de Pago"/>
+               </f:facet>
+               <h:outputText value="#{pago.fechaPago}"/>
+			</h:column>			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Importe"/>
+				</f:facet>
+				<h:outputText value="#{pago.importe}" />
+			</h:column>		
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Periodo"/>
+				</f:facet>
+				<h:outputText value="#{pago.periodo}" />
+			</h:column>		
+			</h:dataTable>		
+			</h:form>
+			
+			<h:button class="button" value="Registrar Pago" outcome="socioNormal-registrar_pago" />
+			<h:link value="Volver al listado..." outcome="ver_pagos_socioN"/>
+			</ui:fragment>
+	</ui:define>
+	
+</ui:composition>
+</html>
+			

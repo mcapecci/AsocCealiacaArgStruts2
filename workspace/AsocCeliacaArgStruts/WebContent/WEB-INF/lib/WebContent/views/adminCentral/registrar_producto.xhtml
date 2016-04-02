@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    
+<ui:composition	template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+	 <ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+			<ui:include src="/WEB-INF/facelets/menu/adminCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'adminCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">
+		<h3>Registrar Producto</h3>	
+
+		<h:form>
+			<fieldset align="right">
+		
+			<label><h:outputText value="Nombre Producto" /></label> 	
+			<h:inputText name="nombre" id="nombre" required="true" value="#{productoBean.nombre}">
+				<f:validateLength minimum="4" maximum="20"/>
+			</h:inputText> <h:outputText value="(*)" /><br/>
+			<h:message for="nombre" style="color: #E10302;"></h:message>
+			<br/><br/>
+			
+			<label><h:outputText value="Descripcion" /></label>		
+			<h:inputText name="descripcion" id="descripcion" required="true" value="#{productoBean.descripcion}">
+			</h:inputText><h:outputText value="(*)" /><br/>
+			<h:message for="descripcion" style="color: #E10302;"></h:message>
+			<br/><br/>			
+			
+			<label><h:outputText value="R.N.P.A" /></label> 	
+			<h:inputText name="rnpa" id="rnpa" required="true" value="#{productoBean.rnpa}">
+				<f:validateLength minimum="6" maximum="20"/>
+			</h:inputText><h:outputText value="(*)" /><br/>
+			<h:message for="rnpa" style="color: #E10302;"></h:message>
+			<br/><br/>			
+			
+			<label><h:outputText value="Empresa" /></label> 		
+			<h:inputText name="empresa" id="empresa" required="true" value="#{productoBean.empresa}">
+				<f:validateLength minimum="8" maximum="40"/>
+			</h:inputText><h:outputText value="(*)" /><br/>
+			<h:message for="empresa" style="color: #E10302;"></h:message>
+			<br/><br/>
+			
+			<label><h:outputText value="R.N.E" /></label> 	
+			<h:inputText name="rne" id="rne" required="true" value="#{productoBean.rne}">
+				<f:validateLength minimum="4" maximum="20"/>
+			</h:inputText> <h:outputText value="(*)" /><br/>
+			<h:message for="rne" style="color: #E10302;"></h:message>
+			<br/><br/>
+			
+			<label><h:outputText value="Fecha" /></label>		
+			<h:inputText name="fecha" id="fecha" required="true" value="#{productoBean.fecha}" maxlength="10">
+				<f:convertDateTime type="date" patter="dd/mm/aaaa"/>
+			</h:inputText><h:outputText value="(*)" /><br/>
+			<h:message for="fecha" style="color: #E10302;"></h:message>
+			<br/><br/>			
+			
+			<label><h:outputText value="Fecha certificado LDG" /></label> 	
+			<h:inputText name="fechaCertLdg" id="fechaCertLdg" required="true" value="#{productoBean.fechaCertLdg}" maxlength="10">
+				<f:convertDateTime type="date" patter="dd/mm/aaaa"/>
+			</h:inputText><h:outputText value="(*)" /><br/>
+			<h:message for="fechaCertLdg" style="color: #E10302;"></h:message>
+			<br/><br/>			
+			
+			<label><h:outputText value="Comentario" /></label> 		
+			<h:inputText name="comentario" id="comentario" required="true" value="#{productoBean.comentario}">				<f:validateLength minimum="4" maximum="70"/>
+			</h:inputText><h:outputText value="(*)" /><br/>
+			<h:message for="comentario" style="color: #E10302;"></h:message>
+			<br/><br/>
+			
+			<h:commandButton class="button" value="Agregar" action="#{productoBean.registrar}"> </h:commandButton>
+		    <h:button class="button" value="Cancelar" outcome="index" /> <br/> <br/>
+		    <h:outputText value="(*) : Campo obligatorio" /> 
+		</fieldset>
+		</h:form>
+		 </ui:fragment>
+	</ui:define>
+	
+</ui:composition>
+</html>

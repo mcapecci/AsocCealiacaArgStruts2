@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+ 
+   <!-- INICIAR SESION DESDE INDEX -->
+   <navigation-rule>
+   <from-view-id>/index.xhtml</from-view-id>
+   <navigation-case>
+   	<from-outcome>socioNormal</from-outcome>
+   	<to-view-id>/views/socioNormal/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>socioVirtual</from-outcome>
+   	<to-view-id>/views/socioVirtual/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminCentral</from-outcome>
+   	<to-view-id>/views/adminCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminUnidad</from-outcome>
+   	<to-view-id>/views/adminUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opCentral</from-outcome>
+   	<to-view-id>/views/opCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opUnidad</from-outcome>
+   	<to-view-id>/views/opUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>error</from-outcome>
+   	<to-view-id>/error.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+   
+   <!-- INICIAR SESION DESDE ERROR -->
+   <navigation-rule>
+   <from-view-id>/error.xhtml</from-view-id>
+   <navigation-case>
+   	<from-outcome>socioNormal</from-outcome>
+   	<to-view-id>/views/socioNormal/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>socioVirtual</from-outcome>
+   	<to-view-id>/views/socioVirtual/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminCentral</from-outcome>
+   	<to-view-id>/views/adminCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminUnidad</from-outcome>
+   	<to-view-id>/views/adminUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opCentral</from-outcome>
+   	<to-view-id>/views/opCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opUnidad</from-outcome>
+   	<to-view-id>/views/opUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>error</from-outcome>
+   	<to-view-id>/error.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+   
+   <!-- INICIAR SESION DESDE olvido pass -->
+   <navigation-rule>
+   <from-view-id>/olvido_pass.xhtml</from-view-id>
+   <navigation-case>
+   	<from-outcome>socioNormal</from-outcome>
+   	<to-view-id>/views/socio/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>socioVirtual</from-outcome>
+   	<to-view-id>/views/socioVirtual/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminCentral</from-outcome>
+   	<to-view-id>/views/adminCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminUnidad</from-outcome>
+   	<to-view-id>/views/adminUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opCentral</from-outcome>
+   	<to-view-id>/views/opCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opUnidad</from-outcome>
+   	<to-view-id>/views/opUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>error</from-outcome>
+   	<to-view-id>/error.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+   
+   <!-- INICIAR SESION DESDE olvido user -->
+   <navigation-rule>
+   <from-view-id>/olvido_user.xhtml</from-view-id>
+   <navigation-case>
+   	<from-outcome>socioNormal</from-outcome>
+   	<to-view-id>/views/socio/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>socioVirtual</from-outcome>
+   	<to-view-id>/views/socioVirtual/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminCentral</from-outcome>
+   	<to-view-id>/views/adminCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>adminUnidad</from-outcome>
+   	<to-view-id>/views/adminUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opCentral</from-outcome>
+   	<to-view-id>/views/opCentral/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>opUnidad</from-outcome>
+   	<to-view-id>/views/opUnidad/index.xhtml</to-view-id>
+   </navigation-case>
+   <navigation-case>
+   	<from-outcome>error</from-outcome>
+   	<to-view-id>/error.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+  
+   <!-- CERRAR SESION -->
+    <navigation-rule>
+   	<from-view-id>/views/*</from-view-id>
+   	<navigation-case>
+   		<from-outcome>logout</from-outcome>
+   		<to-view-id>/index.xhtml?faces-redirect=true</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <!-- ADMINISTRADOR CENTRAL -->
+   <navigation-rule>
+   	<from-view-id>/views/adminCentral/registrar_op.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>opcentral-registrado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_operadores.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   	<from-view-id>/views/adminCentral/ver_operadores.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>opcentral-eliminado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_operadores.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>opcentral-editar</from-outcome>
+   		<to-view-id>/views/adminCentral/editar_op.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/adminCentral/editar_op.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>opcentral-modificado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_operadores.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/adminCentral/config_cuenta.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>admincentral-modificado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_datos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   <from-view-id>/views/adminCentral/cambiar_pass.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>admincentral-cambiopass</from-outcome>
+   		<to-view-id>/views/adminCentral/index.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <!-- BAR // ADMINISTRADOR CENTRAL -->
+     <navigation-rule>
+   	<from-view-id>/views/adminCentral/registrar_bar.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>bar-registrado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_bares.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+      
+    <navigation-rule>
+   	<from-view-id>/views/adminCentral/ver_bares.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>bar-eliminado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_bares.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>bar-editar</from-outcome>
+   		<to-view-id>/views/adminCentral/editar_bar.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/adminCentral/editar_bar.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>bar-modificado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_bares.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+      <!-- MEDICAMENTO // ADMINISTRADOR CENTRAL -->
+     <navigation-rule>
+   	<from-view-id>/views/adminCentral/registrar_medicamento.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>medicamento-registrado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_medicamentos.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+      
+    <navigation-rule>
+   	<from-view-id>/views/adminCentral/ver_medicamentos.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>medicamento-eliminado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_medicamentos.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>medicamento-editar</from-outcome>
+   		<to-view-id>/views/adminCentral/editar_medicamento.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/adminCentral/editar_medicamento.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>medicamento-modificado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_medicamentos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+  
+      <!-- PRODUCTO // ADMINISTRADOR CENTRAL -->
+     <navigation-rule>
+   	<from-view-id>/views/adminCentral/registrar_producto.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>producto-registrado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_productos.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+      
+    <navigation-rule>
+   	<from-view-id>/views/adminCentral/ver_productos.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>producto-eliminado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_productos.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>producto-editar</from-outcome>
+   		<to-view-id>/views/adminCentral/editar_producto.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>producto-verMas</from-outcome>
+   		<to-view-id>/views/adminCentral/prod.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+      
+   <navigation-rule>
+   <from-view-id>/views/adminCentral/editar_producto.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>producto-modificado</from-outcome>
+   		<to-view-id>/views/adminCentral/ver_productos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+  
+  	<!-- SEDE // ADMINISTRADOR CENTRAL -->
+  	<navigation-rule>
+  	<from-view-id>/views/adminCentral/registrar_sede.xhtml</from-view-id>
+  	<navigation-case>
+  		<from-outcome>filial-registrado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_filiales.xhtml</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>delegacion-registrado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_delegaciones.xhtml</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>gruporef-registrado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_g_referencias.xhtml</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>ibeneficiaria-registrado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_i_beneficiarias.xhtml</to-view-id>
+  	</navigation-case>
+  	</navigation-rule>
+  	
+  	<navigation-rule>
+  	<from-view-id>/views/adminCentral/ver_filiales.xhtml</from-view-id>
+  	<navigation-case>
+  		<from-outcome>sede-eliminado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_filiales.xhtml</to-view-id>
+  	</navigation-case>	
+  	<navigation-case>
+  		<from-outcome>sede-editar</from-outcome>
+  		<to-view-id>/views/adminCentral/editar_sede.xhtml</to-view-id>
+  	</navigation-case>
+  	</navigation-rule>
+  	
+  	<navigation-rule>
+  	<from-view-id>/views/adminCentral/ver_delegaciones.xhtml</from-view-id>
+  	<navigation-case>
+  		<from-outcome>sede-eliminado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_delegaciones.xhtml</to-view-id>
+  	</navigation-case>	
+  	<navigation-case>
+  		<from-outcome>sede-editar</from-outcome>
+  		<to-view-id>/views/adminCentral/editar_sede.xhtml</to-view-id>
+  	</navigation-case>
+  	</navigation-rule>
+  	
+  	<navigation-rule>
+  	<from-view-id>/views/adminCentral/ver_g_referencias.xhtml</from-view-id>
+  	<navigation-case>
+  		<from-outcome>sede-eliminado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_g_referencias.xhtml</to-view-id>
+  	</navigation-case>	
+  	<navigation-case>
+  		<from-outcome>sede-editar</from-outcome>
+  		<to-view-id>/views/adminCentral/editar_sede.xhtml</to-view-id>
+  	</navigation-case>
+  	</navigation-rule>
+  	
+  	<navigation-rule>
+  	<from-view-id>/views/adminCentral/ver_i_beneficiarias.xhtml</from-view-id>
+  	<navigation-case>
+  		<from-outcome>sede-eliminado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_i_beneficiarias.xhtml</to-view-id>
+  	</navigation-case>	
+  	<navigation-case>
+  		<from-outcome>sede-editar</from-outcome>
+  		<to-view-id>/views/adminCentral/editar_sede.xhtml</to-view-id>
+  	</navigation-case>
+  	</navigation-rule>
+  	
+  	<navigation-rule>
+  	<from-view-id>/views/adminCentral/editar_sede.xhtml</from-view-id>
+  	<navigation-case>
+  		<from-outcome>filial-modificado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_filiales.xhtml</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>delegacion-modificado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_delegaciones.xhtml</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>gruporef-modificado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_g_referencias.xhtml</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>ibeneficiaria-modificado</from-outcome>
+  		<to-view-id>/views/adminCentral/ver_i_beneficiarias.xhtml</to-view-id>
+  	</navigation-case>
+  	</navigation-rule>
+   
+    <!-- ADMINISTRADOR UNIDAD -->
+      <navigation-rule>
+   	<from-view-id>/views/adminUnidad/registrar_op.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>opunidad-registrado</from-outcome>
+   		<to-view-id>/views/adminUnidad/ver_operadores.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   	<from-view-id>/views/adminUnidad/ver_operadores.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>opunidad-eliminado</from-outcome>
+   		<to-view-id>/views/adminUnidad/ver_operadores.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>opunidad-editar</from-outcome>
+   		<to-view-id>/views/adminUnidad/editar_op.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/adminUnidad/editar_op.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>opunidad-modificado</from-outcome>
+   		<to-view-id>/views/adminUnidad/ver_operadores.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/adminUnidad/config_cuenta.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>adminunidad-modificado</from-outcome>
+   		<to-view-id>/views/adminUnidad/ver_datos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   <from-view-id>/views/adminUnidad/cambiar_pass.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>adminunidad-cambiopass</from-outcome>
+   		<to-view-id>/views/adminUnidad/index.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   
+   <!-- OPERADOR CENTRAL -->
+   <navigation-rule>
+   	<from-view-id>/views/opCentral/registrar_central.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioNormal-registrado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_central.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   	<from-view-id>/views/opCentral/registrar_virtual.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioVirtual-registrado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_virtual.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   	<from-view-id>/views/opCentral/ver_central.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioNormal-eliminado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_central.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>socioNormal-editar</from-outcome>
+   		<to-view-id>/views/opCentral/editar_central.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+      <navigation-rule>
+   	<from-view-id>/views/opCentral/ver_virtual.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioVirtual-eliminado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_virtual.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>socioVirtual-editar</from-outcome>
+   		<to-view-id>/views/opCentral/editar_virtual.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/opCentral/editar_central.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioNormal-modificado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_central.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/opCentral/editar_virtual.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioVirtual-modificado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_virtual.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+	<!-- Pagos socio normal  -->
+	<navigation-rule>
+   <from-view-id>/views/opCentral/ver_pagos_socioN.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioNormal-verPagos</from-outcome>
+   		<to-view-id>/views/opCentral/estado_cuenta_socioN.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <navigation-rule>
+   	<from-view-id>/views/opCentral/estado_cuenta_socioN.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>pagos_socioN</from-outcome>
+   		<to-view-id>/views/opCentral/ver_pagos_socioN.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>socioNormal-registrar_pago</from-outcome>
+   		<to-view-id>/views/opCentral/registrar_pago_normal.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   	<from-view-id>/views/opCentral/registrar_pago_normal.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioNormal-pago_registrado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_pagos_socioN.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <!-- Pagos socio virtual -->
+	<navigation-rule>
+   <from-view-id>/views/opCentral/ver_pagos_socioV.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioVirtual-verPagos</from-outcome>
+   		<to-view-id>/views/opCentral/estado_cuenta_socioV.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <navigation-rule>
+   	<from-view-id>/views/opCentral/estado_cuenta_socioV.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>pagos_socioV</from-outcome>
+   		<to-view-id>/views/opCentral/ver_pagos_socioV.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>socioVirtual-registrar_pago</from-outcome>
+   		<to-view-id>/views/opCentral/registrar_pago_virtual.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   	<from-view-id>/views/opCentral/registrar_pago_virtual.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioVirtual-pago_registrado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_pagos_socioV.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+    <navigation-rule>
+   	<from-view-id>/views/opCentral/ver_avisospago.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioVirtual-editarAviso</from-outcome>
+   		<to-view-id>/views/opCentral/editar_avisopago.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   	<from-view-id>/views/opCentral/editar_avisopago.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioVirtual-avisoModificado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_avisospago.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/opCentral/config_cuenta.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>opcentral-modificado</from-outcome>
+   		<to-view-id>/views/opCentral/ver_datos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   <from-view-id>/views/opCentral/cambiar_pass.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>opcentral-cambiopass</from-outcome>
+   		<to-view-id>/views/opCentral/index.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <!-- OPERADOR UNIDAD -->
+   <navigation-rule>
+   	<from-view-id>/views/opUnidad/registrar_socio.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioNormal-registrado</from-outcome>
+   		<to-view-id>/views/opUnidad/ver_socio.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+      
+    <navigation-rule>
+   	<from-view-id>/views/opUnidad/ver_socio.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>socioNormal-eliminado</from-outcome>
+   		<to-view-id>/views/opUnidad/ver_socio.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>socioNormal-editar</from-outcome>
+   		<to-view-id>/views/opUnidad/editar_socio.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/opUnidad/editar_socio.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioNormal-modificado</from-outcome>
+   		<to-view-id>/views/opUnidad/ver_socio.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/opUnidad/pagos_socio.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioNormal-verPagos</from-outcome>
+   		<to-view-id>/views/opUnidad/estado_cuenta.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <navigation-rule>
+   	<from-view-id>/views/opUnidad/estado_cuenta.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>pagos_socio</from-outcome>
+   		<to-view-id>/views/opUnidad/pagos_socio.xhtml</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>registrar_pago</from-outcome>
+   		<to-view-id>/views/opUnidad/registrar_pago.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   	<from-view-id>/views/opUnidad/registrar_pago.xhtml</from-view-id>
+   	<navigation-case>
+   		<from-outcome>pago-registrado</from-outcome>
+   		<to-view-id>/views/opUnidad/pagos_socio.xhtml</to-view-id>
+   	</navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+   <from-view-id>/views/opUnidad/config_cuenta.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>opunidad-modificado</from-outcome>
+   		<to-view-id>/views/opUnidad/ver_datos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   <from-view-id>/views/opUnidad/cambiar_pass.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>opunidad-cambiopass</from-outcome>
+   		<to-view-id>/views/opUnidad/index.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <!-- SOCIO NORMAL -->
+    <navigation-rule>
+   <from-view-id>/views/socioNormal/config_cuenta.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socio-modificado</from-outcome>
+   		<to-view-id>/views/socioNormal/ver_datos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   <from-view-id>/views/socioNormal/cambiar_pass.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socio-cambiopass</from-outcome>
+   		<to-view-id>/views/socioNormal/index.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <navigation-rule>
+   <from-view-id>/views/socioNormal/productos.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>producto-verMas</from-outcome>
+   		<to-view-id>/views/socioNormal/prod.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+   
+   <!-- SOCIO VIRTUAL -->
+   <navigation-rule>
+   <from-view-id>/views/socioVirtual/config_cuenta.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioVirtual-modificado</from-outcome>
+   		<to-view-id>/views/socioVirtual/ver_datos.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   <from-view-id>/views/socioVirtual/cambiar_pass.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>socioVirtual-cambiopass</from-outcome>
+   		<to-view-id>/views/socioVirtual/index.xhtml</to-view-id>		
+   </navigation-case>
+   </navigation-rule> 
+   
+   <navigation-rule>
+   <from-view-id>/views/socioVirtual/productos.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>producto-verMas</from-outcome>
+   		<to-view-id>/views/socioVirtual/prod.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+   
+    <navigation-rule>
+   <from-view-id>/views/socioVirtual/registrar_aviso.xhtml</from-view-id>
+   <navigation-case>
+   		<from-outcome>aviso-registrado</from-outcome>
+   		<to-view-id>/views/socioVirtual/estado_cuenta.xhtml</to-view-id>
+   </navigation-case>
+   </navigation-rule>
+
+  
+   
+</faces-config>

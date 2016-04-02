@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+
+<ui:composition template="/WEB-INF/facelets/templates/defaultLayout.xhtml">
+	<ui:define name="profile">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+		<ui:include src="/WEB-INF/facelets/profile/profile.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="left-box">
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}">  
+		<ui:include src="/WEB-INF/facelets/menu/adminCentral.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+	<ui:define name="main">
+		<ui:fragment rendered="#{loginBean.profile != 'adminCentral'}">
+			<ui:include src="/WEB-INF/facelets/error/forbidden.xhtml"></ui:include>
+		</ui:fragment>
+		<ui:fragment rendered="#{loginBean.profile == 'adminCentral'}"> 
+			<ui:include src="/WEB-INF/facelets/text/intro.xhtml"></ui:include>
+		</ui:fragment>
+	</ui:define>
+	
+</ui:composition>
+</html>
