@@ -24,7 +24,7 @@
 					<s:label value="Teléfono"/><s:textfield name="telefono" value="%{selected.telefono}"/>(*)<br><br>
 					<s:label value="Dirección"/><s:textfield name="direccion" value="%{selected.direccion}"/>(*)<br><br>
 					<s:label value="Username"/><s:textfield name="username" value="%{selected.username}" readonly="true" cssClass="readonly"/><br><br>
-					<s:label value="Perfil"/><select name="perfil" id="%{selected.perfil}">
+					<s:label value="Perfil"/><select name="perfilSocio" id="%{selected.perfil}">
 											    <option value="adminCentral">Administrador Central</option>
 											    <option value="adminUnidad">Administrador Unidad</option>
 											    <option value="opCentral">Operador Central</option>

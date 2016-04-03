@@ -14,9 +14,7 @@
 		<jsp:include page="/views/menu/opUnidad.jsp" />
 		
 		<div id="main">
-			<h3>Historial de pagos: <s:property value=selected.nomyap/></h3>
-			<h3>Historial de pagos: ${selected.nomyap}</h3>
-
+			<h3>Historial de pagos: <s:property value="selected.nomyap"/></h3>
 			<table cellpadding="3">
 			<thead>
 				<tr>

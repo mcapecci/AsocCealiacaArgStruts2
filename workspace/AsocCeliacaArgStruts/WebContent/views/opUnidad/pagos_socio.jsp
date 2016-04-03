@@ -22,7 +22,7 @@
 					<th>Nombre y Apellido</th>
 					<th>Dni</th>
 					<th>Username</th>
-					<th>Ver Pagos</th>
+					<th>Pagos</th>
 				</tr>
 			</thead>
 			<tbody>

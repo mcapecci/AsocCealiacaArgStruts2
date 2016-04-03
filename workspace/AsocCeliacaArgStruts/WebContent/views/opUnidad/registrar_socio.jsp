@@ -14,7 +14,7 @@
 			<jsp:include page="/views/templates/perfil.jsp" />
 			<jsp:include page="/views/menu/opUnidad.jsp" />	
 			<div id="main">
-				<h3>Registrar Socio</h3>
+				<h3>Registrar Socio de la Unidad</h3>
 				<fieldset align="right">
 				<s:form action="socioNormal-registrado" theme="simple">
 					<s:label value="Nombre y Apellido"/><s:textfield name="nomyap" required="true"/>(*)<br><br>
@@ -22,9 +22,9 @@
 					<s:label value="Ocupación"/><s:textfield name="ocupacion" required="true"/>(*)<br><br>
 					<s:label value="Dirección"/><s:textfield name="direccion" required="true"/>(*)<br><br>
 					<s:label value="Teléfono"/><s:textfield name="telefono" required="true"/>(*)<br><br>
-					<s:label value="Fecha de Nacimiento"/><s:textfield name="fechaNacimiento" required="true"/>(*)<br><br>
-					<s:label value="Fecha de Ingreso"/><s:textfield name="fechaIngreso" required="true"/>(*)<br><br>
-					<s:label value="Fecha de Diagnóstico"/><s:textfield name="fechaDiagnostico" required="true"/>(*)<br><br>
+					<s:label value="Fecha Nacimiento"/><s:textfield name="fechaNacimiento" required="true"/>(*)<br><br>
+					<s:label value="Fecha Ingreso"/><s:textfield name="fechaIngreso" required="true"/>(*)<br><br>
+					<s:label value="Fecha Diagnóstico"/><s:textfield name="fechaDiagnostico" required="true"/>(*)<br><br>
 					<s:label value="Presentado Por"/><s:textfield name="presentadoPor" required="true"/>(*)<br><br>
 					<s:label value="Email"/><s:textfield name="email" required="true"/>(*)<br><br>
 					<s:label value="Username"/><s:textfield name="username" required="true"/>(*)<br><br>
