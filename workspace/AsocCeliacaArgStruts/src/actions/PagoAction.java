@@ -8,9 +8,9 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import servicios.PagoService;
-
+import servicios.SocioService;
 import clasesDelSistema.Pago;
-import clasesDelSistema.Usuario;
+import clasesDelSistema.Socio;
 
 @SuppressWarnings("serial")
 public class PagoAction extends ActionSupport{
@@ -19,10 +19,17 @@ public class PagoAction extends ActionSupport{
 	private Date fechaPago;
 	private Date periodo;
 	private Pago selected;
-	@SuppressWarnings("unused")
 	private List<Pago> all;
 	private PagoService serv = new PagoService();
-	private Usuario userLogin;
+	/* Socio seleccionado */
+	/*
+	private Socio socio;
+	private SocioService servSocio = new SocioService();
+	*/
+	/* Perfil usuario logueado */
+	/*
+	private String perfil;
+	*/
 
 	public Long getIdSelected() {
 		return idSelected;
@@ -51,6 +58,12 @@ public class PagoAction extends ActionSupport{
 	public void setSelected(Pago selected) {
 		this.selected = selected;
 	}
+	public List<Pago> getAll() {
+		return all;
+	}
+	public void setAll(List<Pago> all) {
+		this.all = all;
+	}
 	public PagoService getServ() {
 		return serv;
 	}
@@ -63,14 +76,26 @@ public class PagoAction extends ActionSupport{
 	public void setPeriodo(Date periodo) {
 		this.periodo = periodo;
 	}
-	public Usuario getUserLogin() {
-		this.userLogin = (Usuario)ActionContext.getContext().getSession().get("user");
-		return userLogin;
+	/*
+	public Socio getSocio() {
+		return servSocio.buscar(idSelected);
 	}
-	public void setUserLogin(Usuario user) {
-		this.userLogin = (Usuario)ActionContext.getContext().getSession().get("user");
+	public void setSocio(Socio socio) {
+		this.socio = servSocio.buscar(idSelected);
 	}
-	
-	
+	public String getPerfil() {
+		return perfil;
+	}
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
+	}	
+	*/
+	/* metodos pago */
+	/*
+	public String execute(){
+		this.perfil = (String)ActionContext.getContext().getSession().get("perfil");
+		return "success";
+	}
+	*/
 
 }

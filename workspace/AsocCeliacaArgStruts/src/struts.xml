@@ -205,27 +205,26 @@
        </action>
        
        <!-- OPERADOR UNIDAD // GESTION SOCIOS -->
-       
-       <!-- 
        <action name="ver_sociosNormal" class="actions.OpU_SocioAction">
         	 <result name="success">/views/${perfil}/ver_socio.jsp</result>
        </action>
-       	README 
-	       ver si pagos_sociosNormal necesita el socio seleccionado
-	       y ver en que action va implementado
-        
-       <action name="pagos_sociosNormal" class="actions.OpU_SocioActionn">
+       
+       <action name="pagos_sociosNormal" class="actions.OpU_SocioAction">
         	 <result name="success">/views/${perfil}/pagos_socio.jsp</result>
        </action>
+        
         <action name="socioNormal-verPagos" class="actions.OpU_SocioAction">
         	 <result name="success">/views/${perfil}/estado_cuenta.jsp</result>
        </action>
+       
+       <!--
        <action name="registrar_pago" class="actions.OpU_SocioAction">
         	 <result name="success">/views/${perfil}/registrar_pago.jsp</result>
        </action>
        <action name="pago-registrado" method="registrar" class="actions.OpU_SocioAction">
         	 <result name="pago-registrado">/views/${perfil}/pagos_socio.jsp</result>
        </action>
+       -->
        <action name="registrar_socioNormal" class="actions.OpU_SocioAction">
         	 <result name="success">/views/${perfil}/registrar_socio.jsp</result>
        </action>
@@ -241,6 +240,5 @@
        <action name="socioNormal-registrado" method="registrar" class="actions.OpU_SocioAction">
         	 <result name="socioNormal-registrado">/views/${perfil}/ver_socio.jsp</result>
        </action>
-        -->
     </package>
 </struts>

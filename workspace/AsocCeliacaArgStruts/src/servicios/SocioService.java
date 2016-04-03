@@ -2,6 +2,7 @@ package servicios;
 
 import clasesDAO.GenericDAO;
 import clasesDAOhiberJPA.FactoryDAO;
+import clasesDelSistema.Socio;
 import clasesDelSistema.SocioNormal;
 
 public class SocioService {
@@ -14,4 +15,8 @@ public class SocioService {
 
 	public void modificar(SocioNormal user) {
 		dao.update(user);	}
+	
+	public Socio buscar(long idSelected) {
+		return dao.getById(idSelected);
+	}
 }

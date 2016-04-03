@@ -69,6 +69,10 @@ public class OpU_SocioService {
 		
 	}
 
+	public SocioNormal buscar(long idSelectedUser) {
+		return dao.getById(idSelectedUser);
+	}
+
 
 
 
